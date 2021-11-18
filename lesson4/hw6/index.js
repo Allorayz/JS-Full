@@ -9,5 +9,5 @@ const div = sum / 1234;
 const mods = sum % 1234;
 // console.log(mods);
 
-const result = true ? div > mods : mods > div;
+const result = div > mods;
 console.log(result);
