@@ -1,6 +1,8 @@
 module.exports = {
   extends: ['airbnb-base', 'plugin:prettier/recommended'],
+
   env: {
+    commonjs: true,
     es6: true,
     jest: true,
     browser: true,
