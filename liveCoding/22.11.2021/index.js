@@ -49,7 +49,7 @@ const num2 = 10;
 
 function printResultExample(result) {
   // console.log('Result is ');
-  alert(result);
+  console.log(result);
 }
 
 sum(num1, num2, printResultExample);
@@ -61,19 +61,22 @@ const anotherNumbersList = [5, 0, 8, 10, -4, 50, 220];
 // callback
 // input: number
 // output: boolean
-const filterRes = anotherNumbersList.filter(function (num) {
-  if (num > 10) {
-    return true;
-  }
-  return false;
-});
 
-// function filterCallback(num) {
-//   if (num > 5) {
+// BAD
+// const filterRes = anotherNumbersList.filter(function (num) {
+//   if (num > 10) {
 //     return true;
-//   } else {
-//     return false;
 //   }
-// }
+//   return false;
+// });
 
+// function sum(a, b) {
+//   return a + b;
+// }
+// sum(1, 5, 7, 9);
+
+// GOOD
+const filterRes = anotherNumbersList.filter(el => el > 10);
+
+// test data
 console.log(filterRes);
