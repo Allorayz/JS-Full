@@ -5,3 +5,5 @@ function setTitle(text) {
 }
 
 setTitle('its work?');
+
+export { setTitle };
