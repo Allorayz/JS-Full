@@ -3,3 +3,5 @@ function setTitle(text) {
 }
 
 setTitle('ok, its work?');
+
+export { setTitle };
