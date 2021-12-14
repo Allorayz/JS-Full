@@ -1,7 +1,6 @@
-function clearList() {
-  document.querySelector('.categories').innerHTML = '';
+export function clearList() {
+  const clear = document.querySelector('.categories');
+  clear.innerHTML = '';
 }
 
-clearList();
-
-export { clearList };
+// clearList();
