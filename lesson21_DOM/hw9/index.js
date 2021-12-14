@@ -12,6 +12,6 @@ function finishForm() {
   document.querySelector('[name=password]').setAttribute('type', 'password');
 }
 
-finishForm();
+// finishForm();
 
 export { finishForm };
