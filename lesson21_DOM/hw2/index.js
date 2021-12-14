@@ -9,5 +9,6 @@ function getItemsArray() {
   console.dir(elementArray);
   return elementArray;
 }
+getItemList();
 
 export { getItemList, getItemsArray };
