@@ -4,12 +4,16 @@
 // 3. change type 'text' in name=passwaord in 'password'
 
 function finishForm() {
-  const loginForm = document.querySelector('.login-form');
-  const input = document.createElement('input');
-  input.setAttribute('name', 'login');
-  loginForm.prepend(input);
+  const setLogin = document.querySelector('input');
+  setLogin.setAttribute('name', 'login');
 
-  document.querySelector('[name=password]').setAttribute('type', 'password');
+  const newInput = document.createElement('input');
+
+  const setNewInput = document.querySelector('.login-form');
+  setNewInput.append(newInput);
+
+  newInput.setAttribute('type', 'password');
+  newInput.setAttribute('name', 'password');
 }
 
 // finishForm();
