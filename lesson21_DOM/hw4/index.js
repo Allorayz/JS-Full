@@ -1,9 +1,9 @@
 function setTitle(text) {
-  const someTitle = document.querySelector('.title');
-  someTitle.textContent = text;
-  return someTitle;
+  const setText = document.querySelector('.title');
+  setText.textContent = text;
+  // console.log(setText)
 }
 
-setTitle('its work?');
+// setTitle('hg');
 
 export { setTitle };
