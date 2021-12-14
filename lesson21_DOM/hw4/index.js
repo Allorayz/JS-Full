@@ -1,5 +1,6 @@
 function setTitle(text) {
-  document.querySelector('.title').textContent = text;
+  const setText = document.querySelector('.title');
+  setText.textContent = text;
 }
 
 setTitle('ok, its work?');
