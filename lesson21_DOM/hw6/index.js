@@ -3,3 +3,5 @@ function clearList() {
 }
 
 clearList();
+
+export { clearList };
