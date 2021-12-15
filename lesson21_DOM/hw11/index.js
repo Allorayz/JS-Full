@@ -10,6 +10,6 @@ function squaredNumbers() {
   // console.log(findClass2)
 }
 
-squaredNumbers();
+// squaredNumbers();
 
-// export { squaredNumbers };
+export { squaredNumbers };
