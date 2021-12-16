@@ -13,13 +13,13 @@ const renderTasks = tasksList => {
 
   const tasksElems = tasksList
     .sort((a, b) => a.done - b.done)
-    .map(({ text, done }, index) => {
+    .map(({ id, text, done }, index) => {
       const listItemElem = document.createElement('li');
       listItemElem.classList.add('list__item');
       const checkbox = document.createElement('input');
 
       checkbox.setAttribute('type', 'checkbox');
-      checkbox.setAttribute('data-id', index);
+      checkbox.setAttribute('data-id', id);
       checkbox.checked = done;
 
       checkbox.classList.add('list__item-checkbox');
@@ -36,6 +36,27 @@ const renderTasks = tasksList => {
 };
 
 renderTasks(tasks);
+
+const inputElement = document.querySelector('.task-input');
+console.log(inputElement);
+const createBtnElement = document.querySelector('.create-task-btn');
+console.log(createBtnElement);
+
+function createTaskHandler() {
+  const value = inputElement.value;
+
+  const task = {
+    text: value,
+    done: false,
+    id: Math.random(),
+  };
+  if (value !== '') {
+    tasks.push(task);
+
+    renderTasks(tasks);
+  }
+}
+createBtnElement.addEventListener('click', createTaskHandler);
 
 // EVENTS
 // 1. add event to the element
@@ -61,12 +82,13 @@ function updateTaskHandler(event) {
     return;
   }
 
-  //   const id = event.target.dataset.id;
-  const { id } = event.target.dataset;
-
-  // TODO
-
-  // доделать этот метод и создать новый метод для добавления новой строки
+  const id = event.target.dataset.id;
+  //   const { id } = event.target.dataset;
+  const updateTask = tasks.find(task => task.id == id);
+  //   console.log(idToUpdate);
+  updateTask.done = !updateTask.done;
+  //   console.log(taskToUpdate);
+  renderTasks(tasks);
 }
 
 // inp string(event) func
