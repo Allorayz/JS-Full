@@ -1,5 +1,5 @@
 const dayOfWeek = (date, days) => {
-  const weekDays = ['Mo', 'Tu', 'We', 'Th', 'St', 'Su'];
+  const weekDays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'St'];
   const day = new Date(date).getDate();
   const dateInFuture = new Date(date).setDate(day + days);
 
