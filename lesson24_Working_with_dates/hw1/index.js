@@ -2,7 +2,11 @@ const startNewDate = new Date();
 const endNewDate = new Date(2021, 1, 10, 10, 10, 10);
 
 const getDiff = (startDate, endDate) => {
-  const getNewDate = new Date(startDate - endDate);
+  let getNewDate = new Date(startDate - endDate);
+
+  if (startDate < endDate) {
+    getNewDate = new Date(endDate) - new Date(startDate);
+  }
 
   const newDay = parseInt(getNewDate / (1000 * 60 * 60 * 24));
   const newHour = parseInt((getNewDate / (1000 * 60 * 60)) % 24);
