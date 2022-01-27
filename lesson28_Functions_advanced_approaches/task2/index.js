@@ -1,15 +1,16 @@
-const favorites = ['id-2'];
-const tree = {
-  id: 'id-1',
-  name: 'Products',
-  nodes: [
-    {
-      id: 'id-2',
-      name: 'Food',
-      nodes: [],
-    },
-  ],
-};
+// const favorites = ['id-2', 'id-3'];
+
+// const tree = {
+//   id: 'id-1',
+//   name: 'Products',
+//   nodes: [
+//     {
+//       id: 'id-2',
+//       name: 'Food',
+//       nodes: [],
+//     },
+//   ],
+// };
 
 const markFavorites = (tree, favorites) => {
   const isFavotite = favorites.includes(tree.id);
@@ -21,7 +22,7 @@ const markFavorites = (tree, favorites) => {
   };
 };
 
-const result = markFavorites(tree, favorites);
-console.log(result);
+// const result = markFavorites(tree, favorites);
+// console.log(result);
 
 export { markFavorites };
