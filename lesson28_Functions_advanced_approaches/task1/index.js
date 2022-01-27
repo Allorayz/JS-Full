@@ -17,7 +17,7 @@ const calc = initValue => {
       return this;
     },
 
-    subtrack(value) {
+    subtract(value) {
       result -= value;
       return this;
     },
@@ -30,7 +30,11 @@ const calc = initValue => {
   return calculator;
 };
 
-const result = calc(15).add(3).mult(10).div(5).subtrack(5).result();
-console.log(result);
+// const result = calc(7).add(9).mult(4).div(10).subtract(5).result();
+
+// console.log(result);
+
+// const result1 = calc(15).add(3).mult(10).div(5).subtract(5).result();
+// console.log(result1);
 
 export { calc };
