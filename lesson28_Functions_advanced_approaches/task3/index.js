@@ -12,4 +12,4 @@ console.log(twice(5)); // указав (С), получили выполенен
 const triple = d => mult(d)(3);
 console.log(triple(5));
 
-export { mult };
+export { mult, twice, triple };
