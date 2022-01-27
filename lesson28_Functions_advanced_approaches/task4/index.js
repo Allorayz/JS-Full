@@ -10,3 +10,5 @@ const compose =
 
 const doEverything = compose(add5, mult3, div4); // поочередное выполнениие функций
 console.log(doEverything(12));
+
+export { compose };
