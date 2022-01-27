@@ -30,7 +30,7 @@ const calc = initValue => {
   return calculator;
 };
 
-const result = calc(7).add(3).mult(10).div(5).subtrack(5).result();
+const result = calc(15).add(3).mult(10).div(5).subtrack(5).result();
 console.log(result);
 
 export { calc };
