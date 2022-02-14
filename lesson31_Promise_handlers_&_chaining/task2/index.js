@@ -15,7 +15,7 @@ export const asyncCalculator = numbr =>
       }),
   );
 
-const p = asyncCalculator(4);
+const p = asyncCalculator(5);
 
 p.then(value => console.log(value));
 
