@@ -18,7 +18,7 @@ export const requestUserData = userId => {
           userId: `${userId}`,
           email: 'userid777@example.com',
         });
-      }, 10000);
+      }, 1000);
     }
   });
   return request;
