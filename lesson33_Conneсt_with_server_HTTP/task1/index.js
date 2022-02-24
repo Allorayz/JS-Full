@@ -11,9 +11,8 @@ userAvatarElem.src = defaultAvatar;
 // fetch and render user data ...
 
 const fetchUserData = userName => {
-  return fetch(`https://api.github.com/users/${userName}`).then(response =>
-    response.json(),
-  );
+  return fetch(`https://api.github.com/users/${userName}`)
+      .then(response => response.json());
 };
 
 const renderUserData = userData => {
@@ -21,7 +20,9 @@ const renderUserData = userData => {
   const { avatar_url, name, location } = userData;
   userAvatarElem.src = avatar_url;
   userNameElem.textContent = name;
-  userLocationElem.textContent = location ? `from ${location}` : '';
+  userLocationElem.textContent = location
+      ? `from ${location}`
+      : '';
 };
 
 const showUserBtnElem = document.querySelector('.name-form__btn');
