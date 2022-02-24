@@ -5,7 +5,7 @@ function getTasksList() {
 }
 
 function getTaskById(taskId) {
-  return fetch(`${baseUrl}/${taskId}`).then(responce => responce.json());
+  return fetch(`${baseUrl}/${taskId}`).then(response => response.json());
 }
 
 // examples
