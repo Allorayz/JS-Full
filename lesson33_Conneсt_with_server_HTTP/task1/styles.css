@@ -9,7 +9,7 @@
 .user {
   display: flex;
   flex-direction: column;
-  margin: auto;
+  margin: 50px;
   align-items: center;
 }
 .user__info {
@@ -30,7 +30,7 @@
 }
 
 .name-form {
-  margin: 32px auto;
+  margin: 0 auto;
 }
 .name-form__input {
   height: 32px;
