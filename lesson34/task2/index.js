@@ -1,14 +1,13 @@
-const baseUrl = 'https://66292e6c54afcabd07387955.mockapi.io/api/v1/users';
+const baseUrl = 'https://61b8921e64e4a10017d19082.mockapi.io/api/v1/users';
 
-function getUsersList(baseUrl) {
-	return fetch(baseUrl).then(response => response.json());
+function getUsersList() {
+	return fetch(baseUrl).then(resolve => resolve.json());
 }
 
-export function getUserById(userId) {
-	return fetch(`${baseUrl}/${userId}`).then(user => user.json());
+function getUserById(userId) {
+	return fetch(`${baseUrl}/${userId}`).then(resolve => resolve.json());
 }
-
-export function createUser(userData) {
+function createUser(userData) {
 	return fetch(baseUrl, {
 		method: 'POST',
 		headers: {
@@ -18,13 +17,13 @@ export function createUser(userData) {
 	});
 }
 
-export function deleteUser(userId) {
+function deleteUser(userId) {
 	return fetch(`${baseUrl}/${userId}`, {
 		method: 'DELETE',
 	});
 }
 
-export function updateUser(userId, userData) {
+function updateUser(userId, userData) {
 	return fetch(`${baseUrl}/${userId}`, {
 		method: 'PUT',
 		headers: {
@@ -35,24 +34,24 @@ export function updateUser(userId, userData) {
 }
 
 // examples
-getUsersList(baseUrl).then(users => {
+getUsersList().then(users => {
 	console.log(users); // array of the user objects [{'id':'1', 'firstName':'Grayce' ... }, {'id':'2', 'firstName':'Ara' ... }, ...]
 });
 
-getUserById('8').then(userData => {
+getUserById('5').then(userData => {
 	console.log(userData); // {'id':'2', 'firstName':'Ara' ... }
 });
 
-// const newUserData = {
-// 	email: 'cool@email.com',
-// 	firstName: 'Iron',
-// 	lastName: 'Man',
-// 	age: 42,
-// };
+const newUserData = {
+	email: 'cool@email.com',
+	firstName: 'Iron',
+	lastName: 'Man',
+	age: 42,
+};
 
-// createUser(newUserData).then(() => {
-// 	console.log('User created');
-// });
+createUser(newUserData).then(() => {
+	console.log('User created');
+});
 
 const updatedUserData = {
 	email: 'new@email.com',
@@ -65,6 +64,6 @@ updateUser('1', updatedUserData).then(() => {
 	console.log('User updated');
 });
 
-// deleteUser('10').then(() => {
-// 	console.log('User updated');
-// });
+deleteUser('2').then(() => {
+	console.log('User updated');
+});
