@@ -28,15 +28,17 @@ export const sendForm = formData => {
 
 export const onFormSubmit = event => {
 	event.preventDefault();
-	const formData = [...new FormData(formElement)].reduce(
-		(acc, [field, value]) => ({ ...acc, [field]: value }),
-		{}
-	);
+	const formData = Object.fromEntries(new FormData(formElement));
+	console.log(formData);
 
+	// const formData = [...new FormData(formElement)].reduce(
+	// 	(acc, [field, value]) => ({ ...acc, [field]: value }),
+	// 	{}
+	// );
 	sendForm(formData)
 		.then(response => response.json())
 		.then(userData => {
-			alert(JSON.stringify(userData));
+			alert(Object.entries(userData));
 			formElement.reset();
 			registerBtn.disabled = true;
 		});
