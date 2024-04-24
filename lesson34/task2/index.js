@@ -1,34 +1,46 @@
+const emailInputElem = document.getElementById('email');
+const passwordInputElem = document.querySelector('[name="name"]');
+const userNameElem = document.querySelector('[name="password"]');
+const registerBtn = document.querySelector('.submit-button');
+const formElement = document.querySelector('.login-form');
+
 const baseUrl = 'https://66292e6c54afcabd07387955.mockapi.io/api/v1/users';
 
-export function getUsersList() {
-	return fetch(baseUrl).then(resolve => resolve.json());
-}
+const isValid = () => {
+	if (
+		emailInputElem.reportValidity() &&
+		userNameElem.reportValidity() &&
+		passwordInputElem.reportValidity()
+	) {
+		registerBtn.disabled = false;
+	}
+};
 
-export function getUserById(userId) {
-	return fetch(`${baseUrl}/${userId}`).then(resolve => resolve.json());
-}
-export function createUser(userData) {
+const sendForm = formData => {
 	return fetch(baseUrl, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
 		},
-		body: JSON.stringify(userData),
+		body: JSON.stringify(formData),
 	});
-}
+};
 
-export function deleteUser(userId) {
-	return fetch(`${baseUrl}/${userId}`, {
-		method: 'DELETE',
-	});
-}
+const onFormSubmit = event => {
+	event.preventDefault();
+	const formData = [...new FormData(formElement)].reduce(
+		(acc, [field, value]) => ({ ...acc, [field]: value }),
+		{}
+	);
 
-export function updateUser(userId, userData) {
-	return fetch(`${baseUrl}/${userId}`, {
-		method: 'PUT',
-		headers: {
-			'Content-Type': 'application/json',
-		},
-		body: JSON.stringify(userData),
-	});
-}
+	sendForm(formData)
+		.then(response => response.json())
+		.then(userData => {
+			alert(JSON.stringify(userData));
+			formElement.reset();
+			registerBtn.disabled = true;
+		});
+};
+
+formElement.addEventListener('submit', onFormSubmit);
+formElement.addEventListener('input', isValid);
