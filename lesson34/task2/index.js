@@ -6,7 +6,7 @@ const formElement = document.querySelector('.login-form');
 
 const baseUrl = 'https://66292e6c54afcabd07387955.mockapi.io/api/v1/users';
 
-const isValid = () => {
+export const isValid = () => {
 	if (
 		emailInputElem.reportValidity() &&
 		userNameElem.reportValidity() &&
@@ -16,7 +16,7 @@ const isValid = () => {
 	}
 };
 
-const sendForm = formData => {
+export const sendForm = formData => {
 	return fetch(baseUrl, {
 		method: 'POST',
 		headers: {
@@ -26,7 +26,7 @@ const sendForm = formData => {
 	});
 };
 
-const onFormSubmit = event => {
+export const onFormSubmit = event => {
 	event.preventDefault();
 	const formData = [...new FormData(formElement)].reduce(
 		(acc, [field, value]) => ({ ...acc, [field]: value }),
