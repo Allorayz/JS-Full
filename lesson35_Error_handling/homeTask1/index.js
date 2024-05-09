@@ -1,14 +1,13 @@
 export const parseUser = (jsonStr) => {
 	try {
 		const userData = JSON.parse(jsonStr);
-		return console.log(userData);
+		return userData;
 	} catch (e) {
-		const result = null;
-		return console.log(result);
+		return null;
 	}
 };
 
-const testString = JSON.stringify("some text");
+const testString = JSON.stringify({ name: "Tom" });
 const test = "must be null";
 
 parseUser(testString);
