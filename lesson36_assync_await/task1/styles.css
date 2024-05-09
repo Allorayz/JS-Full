@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #020202;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sqr {
+    width: 15vw;
+    height: 15vw;
+    background-color: red;
+    border-radius: 50%;
+    border-left: 40px solid rgb(82, 18, 210);
+    border-right: 40px solid #aa00ff;
+    border-top: 40px solid yellow;
+    border-bottom: 40px solid orange;
+    animation: rotate 1.5s infinite linear;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
