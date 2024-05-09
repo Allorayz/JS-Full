@@ -270,7 +270,7 @@ ij_typescript_wrap_comments = false
 [{*.cjs,*.js}]
 indent_size = 2
 indent_style = tab
-tab_width = 4
+ij_javascript_tab_width = 4
 ij_continuation_indent_size = 2
 ij_visual_guides = 80
 ij_javascript_align_imports = false
@@ -461,7 +461,7 @@ ij_json_wrap_long_lines = false
 [{*.htm,*.html,*.sht,*.shtm,*.shtml}]
 indent_size = 2
 indent_style = tab
-tab_width = 2
+ij_html_tab_width = 2
 ij_continuation_indent_size = 2
 ij_visual_guides = 80
 ij_html_add_new_line_before_tags = body,div,p,form,h1,h2,h3
